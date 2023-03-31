@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+
+
+<html lang="en">
+<head>
+	<title>SignUp</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="{% static 'login/vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'login/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'login/css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" method="POST" actions=".">
+					{% csrf_token %}
+					<span class="login100-form-title p-b-10">
+							<i class="zmdi zmdi-account-add"></i>
+						</span>
+						<span class="login100-form-title">
+						Signup
+					</span>
+					<br>
+
+					{% if form.errors %}
+					{% for field in form %}
+					{% for error in field.errors %}
+					<div class="alert alert-danger">
+						<strong>{{ field.label }}:&nbsp;</strong><span>{{ error|escape }}</strong>
+					</div>
+					{% endfor %}
+					{% endfor %}
+					{% for error in form.non_field_errors %}
+					<div class="alert alert-danger">
+						<strong>{{ error|escape }}</strong>
+					</div>
+					{% endfor %}
+					{% endif %}
+				
+
+
+					<div class="wrap-input100 validate-input m-t-30" data-validate="Enter username">
+						{% render_field form.username class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Username"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-30" data-validate="Enter First name">
+						{% render_field form.first_name class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="First name"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-30" data-validate="Enter lLast name">
+						{% render_field form.last_name class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Last name"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-30" data-validate="Enter Email">
+						{% render_field form.email class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Email"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-t-30" data-validate="Enter Bio">
+						{% render_field form.bio class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Bio"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">  
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						{% render_field form.password1 class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Password"></span>
+					</div> 
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+						{% render_field form.password2 class="input100" title='' %}
+						<span class="focus-input100" data-placeholder="Repeat confirmation"></span>
+					</div> 
+
+
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn" type="submit">
+								Signup me
+							</button>
+						</div>
+					</div>
+
+					<div class="text-center p-t-115">
+						<span class="txt1">
+							Do you have an account?
+						</span>
+
+						<a class="txt2" href="{% url 'accounts:login' %}">
+							Sign in
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'login/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/daterangepicker/moment.min.js' %}"></script>
+	<script src="{% static 'login/vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'login/js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+
+
+
+

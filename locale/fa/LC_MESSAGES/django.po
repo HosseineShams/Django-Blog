@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-31 02:49+0430\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\blog\templates\blog\home.html:4 .\blog\templates\blog\home.html:7
+#: .\templates\base.html:29 .\templates\navbar.html:12
+msgid "Home"
+msgstr "خانه"
+
+#: .\blog\templates\blog\home.html:26 .\blog\templates\blog\home.html:27
+msgid "Search for posts"
+msgstr "جستجو در بین پست ها"
+
+#: .\blog\templates\blog\home.html:29
+msgid "search"
+msgstr "جستجو"
+
+#: .\hossein_project\settings.py:166
+msgid "persian"
+msgstr "فارسی"
+
+#: .\hossein_project\settings.py:167
+msgid "english"
+msgstr "انگلیسی"
+
+#: .\templates\navbar.html:3
+msgid "Welcome"
+msgstr "خوش آمدید"
+
+#: .\templates\navbar.html:16
+msgid "Blog"
+msgstr "بلاگ"
+
+#: .\templates\navbar.html:21
+msgid "Add new blog"
+msgstr "اضافه کردن پست جدید"
+
+#: .\templates\navbar.html:30
+msgid "Admin"
+msgstr "مدیریت"
+
+#: .\templates\navbar.html:35
+msgid "Profile"
+msgstr "پروفایل"
+
+#: .\templates\navbar.html:39
+msgid "Logout"
+msgstr "خارج شوید"
+
+#: .\templates\navbar.html:44
+msgid "Login"
+msgstr "ورود"
+
+#: .\templates\navbar.html:48
+msgid "Signup"
+msgstr "ثبت نام"

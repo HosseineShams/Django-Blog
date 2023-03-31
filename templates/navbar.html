@@ -1,0 +1,55 @@
+{% load i18n %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">{% trans "Welcome" %}, {{ request.user.username }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav {% if 'fa' in request.path %}ml-auto{% else %}mr-auto{% endif %}">
+        <li class="nav-item 
+        {% if request.path == "/" %}active{% endif %}">
+          <a class="nav-link" href="/">{% trans "Home" %} <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item
+        {% if request.path == "/blog/" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'blog:blog' %}">{% trans "Blog" %}</a>
+        </li>
+
+        <li class="nav-item
+        {% if request.path == "/blog/new/" %}active{% endif %}">
+          <a class="nav-link" href="{% url 'blog:add-blog' %}">{% trans "Add new blog" %}</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav 
+      {% if  'fa' in request.path %}me-auto {% else %}ml-auto{% endif %}">
+        {% if request.user.is_authenticated %}
+            {% if request.user.is_superuser %}
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" href="{% url 'admin:index' %}">{% trans "Admin" %}</a>
+            </li>
+            {% endif %}
+
+        <li class="nav-item {% if request.path == "/accounts/profile/" %}active{% endif %}">
+            <a class="nav-link" href="{% url 'accounts:profile' %}">{% trans "Profile" %}</a>
+          </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="{% url 'accounts:logout' %}">{% trans "Logout" %}</a>
+        </li>
+
+        {% else %}
+        <li class="nav-item {% if request.path == "/accounts/login/" %}active{% endif %}">
+            <a class="nav-link" href="{% url 'accounts:login' %}">{% trans "Login" %}</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'accounts:signup' %}">{% trans "Signup" %}</a>
+          </li>
+        {% endif %}
+  
+      </ul>
+
+    </div>
+  </nav>  

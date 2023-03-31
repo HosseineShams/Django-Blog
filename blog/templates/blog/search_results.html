@@ -1,0 +1,10 @@
+<div id="search_results">
+{% if posts %}
+{% for post in posts %}
+{{ post.title }}
+<br>
+{% endfor %}
+{% elif request.GET.search or is_ajax %}
+no post found!
+{% endif %}
+</div>

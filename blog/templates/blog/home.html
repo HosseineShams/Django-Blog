@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb %}
+<li class="breadcrumb-item active" aria-current="page">{% trans "Home" %}</li>
+{% endblock breadcrumb %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+
+<br>
+<br>
+
+
+<div class="row">
+    <div class="col-12 col-md-6 mx-auto">
+        <form actions="." method="GET">
+            <div class="form-group">
+                <label for="searchInput:" class="d-flex justify-content-center font-weight-bold">{% trans "Search for posts" %}</label>
+                <input type="text" class="form-control" id="searchInput" name="search" placeholder="{% trans "Search for posts" %}" value="{{ request.GET.search }}">
+                <button type="submit" class="btn btn-success mt-2 d-flex ml-auto">
+                    {% trans "search" %}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12 col-md-6 mx-auto" >
+        {% include 'blog/search_results.html' %}
+    </div>
+</div>
+
+{% endblock content%}
+
+{% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{% static 'js/search_ajax.js' %}"></script>
+{% endblock js %}
